@@ -83,6 +83,14 @@ void vendor_load_properties() {
                 OverrideProperty("persist.sys.oplus.region", "CN");
                 OverrideProperty("ro.vendor.oplus.regionmark", "CN");
                 OverrideProperty("ro.vendor.oplus.radio.sar_regionmark", "CN");
+            } else if (prjname == 22851) { // CN
+                device = "OP5943L1";
+                name = "PJA110";
+                model = "PJA110";
+                OverrideProperty("persist.vendor.display.pxlw.iris_feature", "0x41ff0780");
+                OverrideProperty("persist.sys.oplus.region", "CN");
+                OverrideProperty("ro.vendor.oplus.regionmark", "CN");
+                OverrideProperty("ro.vendor.oplus.radio.sar_regionmark", "CN");
             } else if (prjname == 22861) { // IN
                 device = "OP594DL1";
                 name = "CPH2447";
@@ -108,11 +116,11 @@ void vendor_load_properties() {
         default:
             LOG(ERROR) << "Unexpected region ID: " << hw_region_id;
     }
-    set_ro_build_prop("device", device);
-    set_ro_build_prop("model", model);
-    set_ro_build_prop("name", name);
-    set_ro_build_prop("product", model, false);
-    set_ro_build_prop("marketname", "OnePlus 11 5G");
+    set_ro_build_prop("device", "OP5943L1");
+    set_ro_build_prop("model", "PJA110");
+    set_ro_build_prop("name", "PJA110");
+    set_ro_build_prop("product", "PJA110", false);
+    set_ro_build_prop("marketname", "OnePlus Ace 2 Pro");
 
     if (!IsRecoveryMode()) {
         OverrideProperty("ro.product.first_api_level", "32");
